@@ -62,7 +62,7 @@ class App extends Component {
     return (
       <div className="Content">
         <section className="container">
-          <List items={this.state.list} delete={this.removeItem} />
+          <List items={this.state.list} filtered={this.state.filtered} delete={this.removeItem}  />
         {/*<ul>
               {this.state.list.map(item => (
               <li key={item}>{item}
