@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import List from './components/List.js';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
         "Go to the store",
         "Wash the dishes",
         "Learn some code"
-      ]
+      ],
+      filtered: []
     }
   }
 
@@ -60,7 +62,8 @@ class App extends Component {
     return (
       <div className="Content">
         <section className="container">
-          <ul>
+          <List items={this.state.list} delete={this.removeItem} />
+        {/*<ul>
               {this.state.list.map(item => (
               <li key={item}>{item}
               
@@ -70,7 +73,7 @@ class App extends Component {
               ></button>
               </li> 
             ))}
-          </ul>
+          </ul> */}
         </section>
         <hr />
         <section className="section">
@@ -90,5 +93,37 @@ class App extends Component {
     )
   }
 }
+
+// class List extends Component {
+//   render(){
+//     console.log("this.state.lost: ",)
+//     return (
+//       <div>
+//         <ul>
+//           {this.state.list.map(item => (
+//             <li key={item}>
+//               <span 
+//                 className="delete"
+//                 onClick={() => this.removeItem(item)}
+//               />
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     )
+//   }
+// }
+
+{/*         <ul>
+              {this.state.list.map(item => (
+              <li key={item}>{item}
+              
+              <button
+                className="delete"
+                onClick={()=>this.removeItem(item)}
+              ></button>
+              </li> 
+            ))}
+          </ul> */}
 
 export default App;
